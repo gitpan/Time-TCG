@@ -39,12 +39,13 @@ All such numbers are represented as C<Math::BigRat> objects.
 
 package Time::TCG::Realisation;
 
+{ use 5.006; }
 use warnings;
 use strict;
 
 use Time::TCG 0.000 qw(tcg_to_tt tt_to_tcg);
 
-our $VERSION = "0.000";
+our $VERSION = "0.001";
 
 =head1 CONSTRUCTOR
 
@@ -58,7 +59,7 @@ C<Time::TT::Realisation>.
 
 =cut
 
-sub new($$) {
+sub new {
 	my($class, $tt_rln) = @_;
 	return bless(\$tt_rln, $class);
 }
@@ -75,7 +76,7 @@ Returns the TT realisation object underlying this TCG realisation.
 
 =cut
 
-sub tcg_tt_realisation($) { ${$_[0]} }
+sub tcg_tt_realisation { ${$_[0]} }
 
 =item $rln->to_tcg_tai(INSTANT)
 
@@ -85,7 +86,7 @@ a C<Math::BigRat> object, and the result is the same type.
 
 =cut
 
-sub to_tcg_tai($$) {
+sub to_tcg_tai {
 	my($self, $t) = @_;
 	return tt_to_tcg($self->tcg_tt_realisation->to_tai(tcg_to_tt($t)));
 }
@@ -98,7 +99,7 @@ be a C<Math::BigRat> object, and the result is the same type.
 
 =cut
 
-sub from_tcg_tai($$) {
+sub from_tcg_tai {
 	my($self, $t) = @_;
 	return tt_to_tcg($self->tcg_tt_realisation->from_tai(tcg_to_tt($t)));
 }
@@ -112,7 +113,7 @@ must be a C<Math::BigRat> object, and the result is the same type.
 
 =cut
 
-sub to_realisation($$$) {
+sub to_realisation {
 	my($self, $rln, $t) = @_;
 	return $t if $rln == $self;
 	return tt_to_tcg($self->tcg_tt_realisation
@@ -130,13 +131,15 @@ same type.
 
 =cut
 
-sub from_realisation($$$) {
+sub from_realisation {
 	my($self, $rln, $t) = @_;
 	return $t if $rln == $self;
 	return tt_to_tcg($self->tcg_tt_realisation
 			->from_realisation($rln->tcg_tt_realisation,
 					   tcg_to_tt($t)));
 }
+
+=back
 
 =head1 SEE ALSO
 
@@ -149,7 +152,9 @@ Andrew Main (Zefram) <zefram@fysh.org>
 
 =head1 COPYRIGHT
 
-Copyright (C) 2006 Andrew Main (Zefram) <zefram@fysh.org>
+Copyright (C) 2006, 2010 Andrew Main (Zefram) <zefram@fysh.org>
+
+=head1 LICENSE
 
 This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

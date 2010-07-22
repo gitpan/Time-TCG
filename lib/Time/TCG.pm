@@ -62,14 +62,15 @@ TCG, by making use of the facility in C<Time::TT> for realisations of TT.
 
 package Time::TCG;
 
+{ use 5.006; }
 use warnings;
 use strict;
 
 use Math::BigRat 0.03;
 
-our $VERSION = "0.000";
+our $VERSION = "0.001";
 
-use base qw(Exporter);
+use parent "Exporter";
 our @EXPORT_OK = qw(
 	tcg_instant_to_mjd tcg_mjd_to_instant
 	tcg_to_tt tt_to_tcg
@@ -165,6 +166,7 @@ sub tcg_realisation($) {
 =head1 SEE ALSO
 
 L<Date::JD>,
+L<Time::TCB>,
 L<Time::TCG::Realisation>,
 L<Time::TT>
 
@@ -174,7 +176,9 @@ Andrew Main (Zefram) <zefram@fysh.org>
 
 =head1 COPYRIGHT
 
-Copyright (C) 2006 Andrew Main (Zefram) <zefram@fysh.org>
+Copyright (C) 2006, 2010 Andrew Main (Zefram) <zefram@fysh.org>
+
+=head1 LICENSE
 
 This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
