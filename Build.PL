@@ -14,7 +14,7 @@ Module::Build->new(
 		"warnings" => 0,
 	},
 	build_requires => {
-		"Math::BigRat" => "0.04",
+		"Math::BigRat" => "0.13",
 		"Module::Build" => 0,
 		"Test::More" => 0,
 		"perl" => "5.006",
@@ -22,8 +22,8 @@ Module::Build->new(
 		"warnings" => 0,
 	},
 	requires => {
-		"Math::BigRat" => "0.03",
 		"Exporter" => 0,
+		"Math::BigRat" => "0.13",
 		"constant" => 0,
 		"parent" => 0,
 		"perl" => "5.006",

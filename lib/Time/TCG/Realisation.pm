@@ -43,9 +43,9 @@ package Time::TCG::Realisation;
 use warnings;
 use strict;
 
-use Time::TCG 0.000 qw(tcg_to_tt tt_to_tcg);
+use Time::TCG 0.002 qw(tcg_to_tt tt_to_tcg);
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 =head1 CONSTRUCTOR
 
@@ -152,7 +152,7 @@ Andrew Main (Zefram) <zefram@fysh.org>
 
 =head1 COPYRIGHT
 
-Copyright (C) 2006, 2010 Andrew Main (Zefram) <zefram@fysh.org>
+Copyright (C) 2006, 2010, 2012 Andrew Main (Zefram) <zefram@fysh.org>
 
 =head1 LICENSE
 

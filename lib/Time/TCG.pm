@@ -66,9 +66,9 @@ package Time::TCG;
 use warnings;
 use strict;
 
-use Math::BigRat 0.03;
+use Math::BigRat 0.13;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 use parent "Exporter";
 our @EXPORT_OK = qw(
@@ -176,7 +176,7 @@ Andrew Main (Zefram) <zefram@fysh.org>
 
 =head1 COPYRIGHT
 
-Copyright (C) 2006, 2010 Andrew Main (Zefram) <zefram@fysh.org>
+Copyright (C) 2006, 2010, 2012 Andrew Main (Zefram) <zefram@fysh.org>
 
 =head1 LICENSE
 
